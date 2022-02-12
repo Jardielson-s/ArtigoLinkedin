@@ -1,13 +1,12 @@
 import { Request, Response } from "express";
-import api from "../api/axios";
+import search from "../api/axios";
 
 class RequestRespository{
 
     async reqRespository(req:Request, res: Response){
         const { user } = req.body;
-    
-        const gitUser = await api.get(`/${user}/repos`);
-        return res.status(200).json(gitUser.data);
+        search(user);
+        return res.status(200).json("Your request will be process");
     }
 }
 
