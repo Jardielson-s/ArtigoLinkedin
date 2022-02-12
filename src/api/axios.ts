@@ -6,12 +6,12 @@ const api = axios.create({
 
 const search = async (user: string) => {
     try{
-    queue.sendToQueue(user, { message: 'Your response will be processed'})
+    queue.sendToQueue( 'filaProcess', { message: 'Your response will be processed', key: user})
     const response = await api.get(`/${user}`);
-    queue.sendToQueue(user, response.data);
+    queue.sendToQueue('filaProcess', response.data);
     }catch(err){
         //console.log(err);
-        queue.sendToQueue(user, { message: 'Request failed with status code 404'});
+        queue.sendToQueue('errorProcess', { user, message: 'Request failed with status code 404'});
     }
 }
 

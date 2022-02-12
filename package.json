@@ -7,12 +7,14 @@
   "scripts": {
     "dev": "ts-node-dev -r dotenv/config src/server.ts",
     "build": "tsc",
-    "serviceOne": "ts-node-dev -r dotenv/config src/services/Repository.ts"
+    "serviceOne": "ts-node-dev -r dotenv/config src/services/Repository.ts",
+    "serviceTwo": "ts-node-dev -r dotenv/config src/services/Erros.ts"
   },
   "devDependencies": {
     "@types/amqplib": "^0.8.2",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
+    "@types/mongoose": "^5.11.97",
     "@types/morgan": "^1.9.3",
     "morgan": "^1.10.0",
     "typescript": "^4.5.5"
@@ -22,6 +24,8 @@
     "axios": "^0.25.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.1",
     "ts-node-dev": "^1.1.8"
   }
 }

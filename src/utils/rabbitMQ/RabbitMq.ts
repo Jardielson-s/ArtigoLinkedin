@@ -1,4 +1,4 @@
-import amqplib, { Channel, Connection } from 'amqplib';
+import amqplib, { Channel} from 'amqplib';
 
 
 class RabbitMQ{
